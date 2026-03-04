@@ -1041,3 +1041,23 @@ background: #111111;
 }
 
 
+/* MOBILE TAP SUPPORT */
+
+.interactive-item.active::before {
+  width: 4px;
+}
+
+.interactive-item.active::after {
+  width: 100%;
+}
+
+.interactive-item.active h3 {
+  color: #C9A24D;
+  transform: translateX(10px);
+}
+
+.interactive-item.active p {
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 18px;
+}

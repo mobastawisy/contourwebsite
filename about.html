@@ -400,7 +400,25 @@ window.addEventListener("load", setupMobileDropdown);
 
 </script>
 
+<script>
+document.querySelectorAll(".interactive-item").forEach(item => {
 
+  item.addEventListener("click", () => {
+
+    if (window.innerWidth <= 768) {
+
+      document.querySelectorAll(".interactive-item").forEach(el => {
+        if (el !== item) el.classList.remove("active");
+      });
+
+      item.classList.toggle("active");
+
+    }
+
+  });
+
+});
+</script>
 </body>
 
 
