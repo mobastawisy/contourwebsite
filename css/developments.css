@@ -1285,3 +1285,10 @@ html, body {
   }
 
 }
+/* MOBILE DROPDOWN OPEN STATE */
+.nav-dropdown.open .dropdown-menu {
+  display: flex;
+}
+.nav-link {
+  user-select: none;
+}

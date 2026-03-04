@@ -148,3 +148,20 @@
   }
 
 }
+@media (max-width: 768px) {
+
+  .social-icons {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .social-circle {
+    width: 52px;
+    height: 52px;
+    font-size: 16px;
+  }
+
+}
+.site-footer {
+  overflow-x: hidden;
+}
