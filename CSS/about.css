@@ -1,0 +1,1037 @@
+/* ================================
+   COLOR SYSTEM — BLACK & GOLD
+================================ */
+:root {
+  --black: #0F0F0F;
+  --gold: #C9A24D;
+  --white: #F5F5F5;
+  --gray: #9A9A9A;
+  --brand-gold: #c9a24d;
+}
+
+/* ================================
+   RESET & BASE
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+background: #111111;
+  color: #F5F5F5;
+  line-height: 1.6;
+  padding-top: 86px;
+}
+
+/* ================================
+   HEADER
+================================ */
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--black);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 80px;
+  height: 86px;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(201, 162, 77, 0.2);
+}
+
+.site-header,
+.site-header * {
+  box-sizing: border-box;
+  line-height: normal;
+}
+
+.site-header .nav a,
+.site-header .nav-link {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1;
+}
+
+.logo img {
+  height: 46px;
+}
+
+/* ================================
+   NAV CONTAINER
+================================ */
+.nav {
+  position: absolute;
+  right: 80px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  height: auto;
+}
+
+/* ================================
+   NAV ITEMS
+================================ */
+.nav a,
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 2px;
+  color: var(--white);
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+  line-height: normal;
+}
+
+.nav a::after,
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 0;
+  height: 2px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.nav a:hover,
+.nav-link:hover {
+  color: var(--gold);
+}
+
+.nav a:hover::after,
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ================================
+   DROPDOWN
+================================ */
+.nav-dropdown {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-dropdown .nav-link::after {
+  display: none;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% - 20px);
+  left: 0;
+  background: #0F0F0F;
+  border: 1px solid rgba(201,162,77,0.3);
+  min-width: 180px;
+  display: none;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.dropdown-menu a {
+  padding: 12px 20px;
+  color: #E5E5E5;
+  font-size: 14px;
+  text-decoration: none;
+  white-space: nowrap;
+  position: relative;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(201,162,77,0.15);
+  color: var(--gold);
+}
+
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown:focus-within .dropdown-menu {
+  display: flex;
+}
+
+.dropdown-menu a::after {
+  display: none !important;
+}
+
+.dropdown-menu a::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  bottom: 8px;
+  width: 0;
+  height: 1.5px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.dropdown-menu a:hover::before {
+  width: calc(100% - 40px);
+}
+
+/* ================================
+   ABOUT HERO (FIRST DEFINITION)
+================================ */
+/* ================================
+   LUXURY ABOUT HERO
+================================ */
+
+.about-hero {
+  height: 100vh;
+  background: 
+  /* radial-gradient(circle at 80% 20%, rgba(201,162,77,0.08), transparent 40%),
+  #111111;*/
+
+   linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+    url("../images/your-architecture-image.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 0 100px;
+  color: #F5F5F5;
+    position: relative;
+
+}
+/*.about-hero {
+  position: relative;
+  height: 100vh;
+  background: #111111;
+  display: flex;
+  align-items: center;
+  padding: 0 100px;
+  overflow: hidden;
+}*/
+
+.hero-logo {
+  position: absolute;
+  right: 8%;
+  top: 45%;
+  transform: translateY(-50%);
+  width: 400px;        /* adjust size here */
+  opacity: 1.5;
+  filter: brightness(0.9);
+  pointer-events: none;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.hero-label {
+  color: #C9A24D;
+  font-size: 12px;
+  letter-spacing: 4px;
+  margin-bottom: 25px;
+}
+
+.about-hero h1 {
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 1.05;
+  margin-bottom: 30px;
+}
+
+.about-hero p {
+  font-size: 18px;
+  color: #D0D0D0;
+  line-height: 1.8;
+}
+
+.hero-accent {
+  position: absolute;
+  left: 70px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 200px;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    #C9A24D,
+    transparent
+  );
+  opacity: 0.6;
+}
+
+.hero-content {
+  animation: fadeUp 1.2s ease-out forwards;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero-logo {
+  animation: floatLogo 6s ease-in-out infinite;
+}
+
+@keyframes floatLogo {
+  0% { transform: translateY(-50%) translateY(0px); }
+  50% { transform: translateY(-50%) translateY(-15px); }
+  100% { transform: translateY(-50%) translateY(0px); }
+}
+.hero-logo {
+  filter: drop-shadow(0 0 10px rgba(201,162,77,0.15));
+}
+.hero-left h1 {
+  opacity: 0;
+  animation: fadeUp 1.2s ease-out 0.3s forwards;
+}
+
+.hero-left p {
+  opacity: 0;
+  animation: fadeUp 1.2s ease-out 0.6s forwards;
+}
+
+
+/* ================================
+   STORY SECTION
+================================ */
+.about-story {
+  background:
+    radial-gradient(circle at 85% 20%, rgba(201,162,77,0.05), transparent 40%),
+    #fff6f6;
+  padding: 140px 100px;
+  color: #C9A24D;
+}
+
+
+.about-story h2 {
+  font-size: 48px;
+  font-weight: 500;
+  margin-bottom: 40px;
+  position: relative;
+}
+.about-story h2::after {
+  content: "";
+  width: 70px;
+  height: 2px;
+  background: #C9A24D;
+  display: block;
+  margin-top: 15px;
+}
+
+
+.about-story p {
+  max-width: 750px;
+  font-size: 19px;
+  line-height: 1.9;
+  color: #000000;
+  margin-bottom: 25px;
+}
+.evolution-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+}
+
+.evolution-text {
+  width: 55%;
+}
+
+.evolution-text h2 {
+  font-size: 48px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.evolution-text h2::after {
+  content: "";
+  width: 70px;
+  height: 2px;
+  background: #C9A24D;
+  display: block;
+  margin-top: 15px;
+}
+
+.evolution-text p {
+  font-size: 18px;
+  line-height: 1.9;
+  color: #0c0909;
+  margin-bottom: 25px;
+}
+
+.evolution-image {
+  width: 60%;
+  position: relative;
+  overflow: hidden;
+}
+
+.evolution-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  filter: brightness(0.85);
+  transition: transform 0.6s ease;
+}
+
+.evolution-image:hover img {
+  transform: scale(1.05);
+}
+.evolution-image::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 100px;
+  height: 80px;
+  border-top: 2px solid #C9A24D;
+  border-left: 2px solid #C9A24D;
+}
+
+
+/* ================================
+   VALUES
+================================ */
+.about-values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  padding: 120px 80px;
+  background: #0F0F0F;
+}
+
+.value h3 {
+  color: #C9A24D;
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+
+.value p {
+  color: #B5B5B5;
+  font-size: 16px;
+}
+
+/* ==========================================
+   PREMIUM INTERACTIVE EXPERTISE SECTION
+========================================== */
+
+.expertise-interactive {
+  position: relative;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(201,162,77,0.04), transparent 40%),
+    #111111;
+  padding: 180px 120px;
+}
+
+.interactive-container {
+  max-width: 1200px;
+}
+
+/* Section Title */
+.interactive-title {
+  font-size: 54px;
+  font-weight: 400;
+  margin-bottom: 120px;
+  position: relative;
+  color: #C9A24D;
+  letter-spacing: 1px;
+}
+
+.interactive-title::after {
+  content: "";
+  width: 90px;
+  height: 2px;
+  background: #C9A24D;
+  display: block;
+  margin-top: 25px;
+}
+
+/* List */
+.interactive-list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Item */
+.interactive-item {
+  position: relative;
+  padding: 45px 0 45px 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: all 0.4s ease;
+}
+
+/* Gold Left Indicator */
+.interactive-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 60%;
+  background: #C9A24D;
+  transition: width 0.4s ease;
+}
+
+/* Animated Bottom Line */
+.interactive-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 0;
+  background: #C9A24D;
+  transition: width 0.4s ease;
+}
+
+/* Number */
+.item-number {
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: #C9A24D;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Title */
+.interactive-item h3 {
+  font-size: 30px;
+  font-weight: 400;
+  color: #EDEDED;
+  letter-spacing: 0.5px;
+  transition: all 0.4s ease;
+}
+
+/* Description */
+.interactive-item p {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.4s ease;
+  color: #BDBDBD;
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+/* Hover Effects */
+.interactive-item:hover::before {
+  width: 4px;
+}
+
+.interactive-item:hover::after {
+  width: 100%;
+}
+
+.interactive-item:hover h3 {
+  color: #C9A24D;
+  transform: translateX(10px);
+}
+
+.interactive-item:hover p {
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 18px;
+}
+
+/* Primary Item (Hierarchy) */
+.primary h3 {
+  font-size: 38px;
+}
+
+.primary p {
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 18px;
+}
+
+
+/* ================================
+   ABOUT LIST
+================================ */
+/* ==========================================
+   WHY CHOOSE US - SPLIT LAYOUT
+========================================== */
+
+/* ==========================================
+   WHY CHOOSE US – LIGHT LUXURY VERSION
+========================================== */
+
+.about-why {
+  background:
+    radial-gradient(circle at 85% 20%, rgba(201,162,77,0.05), transparent 40%),
+    #fff6f6;
+  padding: 180px 120px;
+}
+
+.why-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* align image with heading */
+  gap: 100px;
+}
+
+/* TEXT SIDE */
+.why-content {
+  width: 60%;
+}
+
+.why-content h2 {
+  font-size: 52px;
+  font-weight: 400;
+  margin-bottom: 40px;
+  position: relative;
+  color: #C9A24D;
+  letter-spacing: 0.5px;
+}
+
+.why-content h2::after {
+  content: "";
+  width: 90px;
+  height: 2px;
+  background: #C9A24D;
+  display: block;
+  margin-top: 22px;
+}
+
+.why-content p {
+  font-size: 18px;
+  line-height: 1.9;
+  color: #111111;
+  margin-bottom: 45px;
+}
+
+/* LIST */
+.why-list {
+  list-style: none;
+  padding: 0;
+}
+
+.why-list li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 22px;
+  font-size: 17px;
+  color: #1a1a1a;
+  line-height: 1.7;
+}
+
+/* Gold square bullets */
+.why-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 8px;
+  height: 8px;
+  background: #C9A24D;
+}
+
+/* IMAGE SIDE */
+.why-image {
+  width: 40%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Architectural gold corner */
+.why-image::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  width: 90px;
+  height: 90px;
+  border-top: 2px solid #C9A24D;
+  border-left: 2px solid #C9A24D;
+  z-index: 2;
+}
+
+/* Light overlay for elegance (not heavy) */
+.why-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+
+.why-image img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.95) contrast(1.05);
+  transition: transform 0.6s ease;
+}
+
+.why-image:hover img {
+  transform: scale(1.05);
+}
+
+.why-image {
+  width: 40%;
+  position: relative;
+  top: 80px;   /* lifts the image upward */
+}
+
+/* ================================
+   STATS
+================================ */
+.about-stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 120px 80px;
+  background: linear-gradient(
+    135deg,
+    #0F0F0F,
+    #1A1A1A
+  );
+}
+
+.stat span {
+  font-size: 48px;
+  color: #C9A24D;
+  font-weight: bold;
+}
+
+.stat p {
+  margin-top: 10px;
+  color: #B5B5B5;
+  text-align: center;
+}
+
+/* ================================
+   FOOTER
+================================ */
+.site-footer {
+  background: #000;
+  color: #aaa;
+  text-align: center;
+  padding: 40px;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .about-values {
+    grid-template-columns: 1fr;
+  }
+
+  .about-stats {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .site-header {
+    padding: 20px 30px;
+  }
+
+  .nav {
+    right: 30px;
+  }
+
+  .about-hero h1 {
+    font-size: 42px;
+  }
+
+  .about-story {
+    padding: 100px 30px;
+  }
+
+  .about-values {
+    padding: 100px 30px;
+  }
+}
+
+
+/* ================================
+   PREMIUM INVESTOR STRIP
+================================ */
+
+.investor-strip {
+  background: #0F0F0F;
+  padding: 140px 120px;
+  border-top: 1px solid rgba(201,162,77,0.15);
+  border-bottom: 1px solid rgba(201,162,77,0.15);
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  text-align: center;
+}
+
+.stat-box {
+  flex: 1;
+  padding: 0 40px;
+  position: relative;
+  transition: transform 0.4s ease;
+}
+
+/* Elegant vertical separators */
+.stat-box:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 25%;
+  width: 1px;
+  height: 50%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(201,162,77,0.25),
+    transparent
+  );
+}
+
+/* Subtle hover lift */
+.stat-box:hover {
+  transform: translateY(-8px);
+}
+
+/* Numbers / Titles */
+.stat-number {
+  display: block;
+  font-size: 46px;
+  color: #C9A24D;
+  font-weight: 500;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+
+/* Labels */
+.stat-label {
+  display: block;
+  font-size: 14px;
+  color: #A5A5A5;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.stat-number {
+  font-size: 60px;
+  font-weight: 300;
+  color: #C9A24D;
+  display: inline-block;
+}
+
+.stat-suffix {
+  font-size: 32px;
+  color: #C9A24D;
+  margin-left: 5px;
+  position: relative;
+  top: -10px;
+}
+
+.text-only {
+  font-size: 42px;
+  color: #C9A24D;
+}
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  text-align: center;
+}
+
+.stat-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 140px;
+}
+
+.stat-number {
+  font-size: 58px;
+  font-weight: 300;
+  color: #C9A24D;
+  letter-spacing: 1px;
+  line-height: 1;
+  margin-bottom: 15px;
+}
+
+.stat-label {
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #AFAFAF;
+}
+
+.text-only {
+  font-size: 42px;
+  font-weight: 300;
+  color: #C9A24D;
+}
+
+/* =====================================================
+   COMPLETE MOBILE RESPONSIVE SYSTEM – ABOUT PAGE
+   Paste at the very bottom of your CSS
+===================================================== */
+
+/* ---------- GLOBAL FIX ---------- */
+@media (max-width: 992px) {
+
+  html, body {
+    overflow-x: hidden;
+  }
+
+  .site-header {
+    height: 70px;
+    padding: 0 24px;
+  }
+
+  body {
+    padding-top: 70px;
+  }
+
+  .logo img {
+    height: 34px;
+  }
+
+  .nav {
+    right: 24px;
+    gap: 16px;
+  }
+
+  .nav a,
+  .nav-link {
+    font-size: 13px;
+  }
+
+}
+
+/* =====================================================
+   FIXED RESPONSIVE HERO – ABOUT PAGE
+===================================================== */
+
+@media (max-width: 992px) {
+
+  .about-hero {
+    height: auto;
+    min-height: 85vh;
+    padding: 120px 24px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .about-hero h1 {
+    font-size: clamp(32px, 6vw, 48px);
+    line-height: 1.15;
+  }
+
+  .about-hero p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-top: 20px;
+  }
+
+  .hero-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+  }
+
+  .hero-logo {
+    display: none; /* too heavy for mobile */
+  }
+
+  .hero-accent {
+    display: none;
+  }
+
+}
+
+/* ---------- STORY + EVOLUTION ---------- */
+@media (max-width: 992px) {
+
+  .evolution-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .evolution-text,
+  .evolution-image {
+    width: 100%;
+  }
+
+  .evolution-image img {
+    height: 300px;
+  }
+
+}
+
+/* ---------- WHY CHOOSE US ---------- */
+@media (max-width: 992px) {
+
+  .why-container {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .why-content,
+  .why-image {
+    width: 100%;
+  }
+
+  .why-image {
+    top: 0;
+  }
+
+  .why-image img {
+    height: 320px;
+  }
+
+}
+
+/* ---------- VALUES GRID ---------- */
+@media (max-width: 768px) {
+
+  .about-values {
+    grid-template-columns: 1fr;
+    padding: 80px 24px;
+  }
+
+}
+
+/* ---------- INVESTOR STRIP ---------- */
+@media (max-width: 992px) {
+
+  .stats-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .stat-box:not(:last-child)::after {
+    display: none;
+  }
+
+}
+
+/* ---------- SECTION PADDING NORMALIZATION ---------- */
+@media (max-width: 768px) {
+
+  .about-story,
+  .about-why,
+  .expertise-interactive,
+  .investor-strip {
+    padding: 80px 24px;
+  }
+
+}
+
+
+
+

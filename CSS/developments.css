@@ -1,0 +1,1287 @@
+/* ================================
+   COLOR SYSTEM — BLACK & GOLD
+================================ */
+:root {
+  --black: #0F0F0F;
+  --gold: #C9A24D;
+  --white: #F5F5F5;
+  --gray: #9A9A9A;
+  --brand-gold: #c9a24d;
+}
+
+
+
+
+/* ================================
+   RESET & BASE
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--white);
+  color: var(--black);
+  line-height: 1.6;
+
+  padding-top: 86px; /* matches .site-header height */
+
+}
+
+/* ================================
+   HEADER
+================================ */
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--black);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 80px; /* IMPORTANT */
+  height: 86px;   /* LOCK HEIGHT */
+  z-index: 1000;
+  border-bottom: 1px solid rgba(201, 162, 77, 0.2);
+}
+/* ================================
+   NAVBAR HARD RESET (CRITICAL)
+================================ */
+.site-header,
+.site-header * {
+  box-sizing: border-box;
+  line-height: normal;
+}
+
+.site-header .nav a,
+.site-header .nav-link {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1;
+}
+
+
+/* LOGO */
+.logo img {
+  height: 46px;
+}
+
+/* ================================
+   NAV CONTAINER
+================================ */
+.nav {
+  position: absolute;
+  right: 80px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  height: auto;
+}
+
+/* ================================
+   NAV ITEMS (ALL EQUAL)
+================================ */
+.nav a,
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 2px;
+  color: var(--white);
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+  line-height: normal; /* RESET */
+}
+
+/* ================================
+   HOVER LINE EFFECT
+================================ */
+.nav a::after,
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px; /* LOCKED POSITION */
+  width: 0;
+  height: 2px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.nav a:hover,
+.nav-link:hover {
+  color: var(--gold);
+}
+
+.nav a:hover::after,
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ================================
+   DROPDOWN
+================================ */
+.nav-dropdown {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+/* REMOVE UNDERLINE FROM DROPDOWN TRIGGER */
+.nav-dropdown .nav-link::after {
+  display: none;
+}
+/* DROPDOWN MENU */
+.dropdown-menu {
+  position: absolute;
+   top: calc(100% - 20px);  left: 0;
+  background: #0F0F0F;
+  border: 1px solid rgba(201,162,77,0.3);
+  min-width: 180px;
+  display: none;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+/* DROPDOWN LINKS */
+.dropdown-menu a {
+  padding: 12px 20px;
+  color: #E5E5E5;
+  font-size: 14px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* DROPDOWN HOVER */
+.dropdown-menu a:hover {
+  background: rgba(201,162,77,0.15);
+  color: var(--gold);
+}
+
+/* SHOW DROPDOWN */
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown:focus-within .dropdown-menu {
+  display: flex;
+}
+
+/* REMOVE ANY NAV UNDERLINE FROM DROPDOWN ITEMS */
+.dropdown-menu a::after {
+  display: none !important;
+}
+/* DROPDOWN LINK UNDERLINE (ONLY HERE) */
+.dropdown-menu a {
+  position: relative;
+}
+
+/* Underline effect */
+.dropdown-menu a::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  bottom: 8px;
+  width: 0;
+  height: 1.5px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+/* Show underline on hover */
+.dropdown-menu a:hover::before {
+  width: calc(100% - 40px);
+}
+
+/* ================================
+   CONTENT SECTION
+================================ */
+.content-section {
+  width: 100%;
+  padding: 120px 0;
+}
+
+.light-gold {
+  background: linear-gradient(
+    180deg,
+    #F7F2E8 0%,
+    #EFE6D6 60%,
+    #E8DDC6 100%
+  );
+}
+
+.content-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.content-container h2 {
+  font-size: 32px;
+  color: #0F0F0F;
+  margin-bottom: 25px;
+}
+.content-container h3 {
+  color: #C9A24D;
+  font-size: 34px;
+  margin-bottom: 20px;
+}
+
+.content-container p {
+  font-size: 16px;
+  color: #2A2A2A;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+/* ================================
+   FEATURE LIST
+================================ */
+.feature-list {
+  list-style: none;
+  padding: 0;
+}
+
+.feature-list li {
+  font-size: 15px;
+  padding-left: 22px;
+  margin-bottom: 12px;
+  position: relative;
+  color: #2A2A2A;
+}
+
+.feature-list li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 8px;
+}
+
+/* ================================
+   DEVELOPMENTS SLIDER — FINAL
+================================ */
+
+.developments-slider {
+  width: 100%;
+  background: #000;
+  position: relative;
+}
+
+.slider {
+  width: 100%;
+  position: relative;
+}
+
+/* Slides */
+.slide {
+  width: 100%;
+  display: none;
+  position: relative;
+}
+
+.slide.active {
+  display: block;
+}
+
+/* Images (NO CROPPING) */
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  animation: zoomFade 4s ease-in-out;
+}
+
+/* Fade + Zoom Animation */
+@keyframes zoomFade {
+  from {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Caption Overlay */
+.slide-caption {
+  position: absolute;
+  bottom: 50px;
+  left: 60px;
+  color: #fff;
+  z-index: 5;
+}
+
+.slide-caption h3 {
+  font-size: 32px;
+  letter-spacing: 3px;
+  font-weight: 500;
+}
+
+.slide-caption span {
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
+  letter-spacing: 4px;
+  color: #C9A24D;
+  text-transform: uppercase;
+}
+
+/* Dark Gradient for Readability */
+.slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+/* Navigation Buttons */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.55);
+  color: #C9A24D;
+  border: none;
+  font-size: 30px;
+  padding: 14px 18px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.nav-btn:hover {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.nav-btn.prev {
+  left: 30px;
+}
+
+.nav-btn.next {
+  right: 30px;
+}
+
+/* ================================
+   HERO SLIDESHOW
+================================ */
+
+.hero-slider {
+  margin-top: 0;
+}
+
+/* Make hero feel strong but not cropped */
+.hero-slider .slide img {
+  max-height: 85vh;
+}
+
+/* Caption positioning for hero */
+.hero-slider .slide-caption {
+  bottom: 70px;
+  left: 80px;
+}
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+  .hero-slider .slide-caption {
+    left: 30px;
+    bottom: 40px;
+  }
+
+  .slide-caption h3 {
+    font-size: 22px;
+  }
+
+  .slide-caption span {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+}
+
+/* ================================
+   TREVI MALL — FINAL STABLE LAYOUT
+================================ */
+
+/* GRID LAYOUT */
+
+
+/* TEXT COLUMN */
+.trevi-content {
+  max-width: 620px;
+}
+
+.trevi-content h2 {
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+
+.trevi-content p {
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* ACTION BUTTONS */
+.trevi-actions {
+  margin-top: 40px;
+  display: flex;
+  gap: 16px;
+}
+
+.btn-outline,
+.btn-solid {
+  padding: 14px 28px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* OUTLINE BUTTON */
+.btn-outline {
+  border: 1px solid #000;
+  color: #000;
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* SOLID BUTTON */
+.btn-solid {
+  background: #000;
+  color: #fff;
+  border: 1px solid #000;
+}
+
+.btn-solid:hover {
+  background: transparent;
+  color: #000;
+}
+
+/* IMAGE COLUMN */
+.trevi-image {
+  display: flex;
+  justify-content: flex-end; /* push image right */
+}
+.trevi-image {
+  margin-top: 40px;
+}
+
+
+.trevi-image img {
+  width: 100%;
+  max-width: 900px;
+  height: auto;        /* ❗ REMOVE fixed height */
+  max-height: 420px;  /* keeps it controlled */
+  object-fit: cover;
+  display: block;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .trevi-layout {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .trevi-image {
+    justify-content: center;
+  }
+
+  .trevi-image img {
+    height: 360px;
+  }
+}
+
+/* ================================
+   TREVI FULL WIDTH OVERRIDE
+================================ */
+
+/* Break container width ONLY here */
+.trevi-fullwidth .content-container {
+  max-width: 100%;
+  padding-left: 24px;
+  padding-right: 5px;
+}
+
+/* Keep grid logic */
+.trevi-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1.4fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Image */
+.trevi-image {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.trevi-image img {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .trevi-fullwidth .content-container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .trevi-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .trevi-image {
+    justify-content: center;
+  }
+}
+
+/* Make TREVI section larger vertically */
+.trevi-fullwidth {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.hero-slider {
+  position: relative;
+}
+
+.hero-text {
+  position: absolute;
+  left: 120px;
+  bottom: 120px;
+  color: #fff;
+}
+
+.hero-title {
+  font-size: 64px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  margin-bottom: 2px;
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.hero-location {
+  margin-top: 10px;
+  font-size: 12px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--brand-gold);
+  font-weight: 500;
+    text-shadow: 0 0 8px rgba(201, 162, 77, 0.4);
+
+}
+/* ================================
+   SECTIONS
+================================ */
+
+.content-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.light-gold {
+  background: #F8F6F2;
+}
+
+.content-section h2 {
+  font-size: 28px;
+  letter-spacing: 2px;
+  color: #C9A24D;
+  margin-bottom: 30px;
+}
+
+/* ================================
+   DARK GOLD LOCATION SECTION
+================================ */
+
+.dark-gold {
+  background: #0b0b0b;
+  color: #f5f5f5;
+}
+
+.dark-gold h2 {
+  color: #C9A24D;
+}
+
+.dark-gold p {
+  color: #d0d0d0;
+}
+
+/* Distance Icons */
+.location-distances {
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.distance-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+
+/* Light outline button */
+.btn-outline.light {
+  border-color: #C9A24D;
+  color: #C9A24D;
+}
+
+.btn-outline.light:hover {
+  background: #C9A24D;
+  color: #000;
+}
+
+/* ================================
+   SCROLL REVEAL ANIMATION
+================================ */
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+  /*////////////////////////////////////////////////////////////////////////*/
+  /* ================================
+   LUXURY SVG ICONS
+================================ */
+
+.lux-icon {
+  width: 18px;
+  height: 18px;
+  stroke: #C9A24D;
+  stroke-width: 1.6;
+  fill: none;
+  flex-shrink: 0;
+}
+
+.location-distances {
+  margin: 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.distance-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #e0e0e0;
+}
+
+/* ================================
+   LOCATION IMAGE EMPHASIS
+================================ */
+
+.trevi-location .trevi-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1.6fr; /* image gets more space */
+  gap: 60px;
+  align-items: center;
+}
+
+.trevi-location .trevi-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+/* ================================
+   LOCATION SECTION – WIDER CANVAS
+================================ */
+
+.trevi-location .content-container {
+  max-width: 1400px;   /* was likely ~1100–1200 */
+}
+.trevi-location h2 {
+  font-size: 34px;
+  letter-spacing: 1px;
+}
+
+.trevi-location .trevi-image img {
+  display: block;
+  margin-top: -20px;
+}
+
+
+.btn-outline {
+  transition: transform 0.2s ease;
+}
+
+.btn-outline:active {
+  transform: scale(0.96);
+}
+
+/* ================================
+   FACILITIES SECTION
+================================ */
+
+.facilities-section {
+  padding: 120px 0;
+}
+
+.section-title {
+  text-align: center;
+  color: #C9A24D;
+  font-size: 32px;
+  margin-bottom: 60px;
+  letter-spacing: 1px;
+}
+
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.facility-card {
+  background: #C9A24D;
+  color: #111;
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.facility-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+}
+
+.facility-card p {
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+
+/* ================================
+   FACILITIES SECTION – LUXURY
+================================ */
+
+.facilities-section {
+  padding: 120px 0;
+  background: #0b0b0b;
+}
+
+.section-title {
+  text-align: center;
+  color: #C9A24D;
+  font-size: 32px;
+  margin-bottom: 70px;
+  letter-spacing: 1px;
+}
+
+/* Grid */
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 26px;
+}
+
+/* Card */
+.facility-card {
+  background: #111;
+  border: 1px solid rgba(201, 162, 77, 0.35);
+  color: #f5f5f5;
+  padding: 32px 26px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+  transition: all 0.35s ease;
+}
+
+/* Hover effect */
+.facility-card:hover {
+  background: #C9A24D;
+  color: #000;
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+  .facility-card {
+    font-size: 13px;
+    padding: 28px 20px;
+  }
+}
+/* ================================
+   FACILITIES SECTION – ICON VERSION
+================================ */
+
+.facilities-section {
+  padding: 120px 0;
+  background: #0b0b0b;
+}
+
+.section-title {
+  text-align: center;
+  color: #C9A24D;
+  font-size: 32px;
+  margin-bottom: 70px;
+  letter-spacing: 1px;
+}
+
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 26px;
+}
+
+.facility-card {
+  background: #111;
+  border: 1px solid rgba(201, 162, 77, 0.35);
+  padding: 34px 26px;
+  text-align: center;
+  transition: all 0.35s ease;
+}
+
+.facility-card svg {
+  width: 32px;
+  height: 32px;
+  stroke: #C9A24D;
+  stroke-width: 1.5;
+  fill: none;
+  margin-bottom: 16px;
+}
+
+.facility-card span {
+  display: block;
+  color: #f5f5f5;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Hover */
+.facility-card:hover {
+  background: #C9A24D;
+  transform: translateY(-6px);
+}
+
+.facility-card:hover svg {
+  stroke: #000;
+}
+
+.facility-card:hover span {
+  color: #000;
+}
+.facility-card svg {
+  width: 30px;
+  height: 30px;
+  stroke: #C9A24D;
+  stroke-width: 1.6;
+  fill: none;
+  margin-bottom: 16px;
+}
+
+/* ================================
+   SALES CONTACT SECTION
+================================ */
+
+
+
+/* ================= SALES SECTION FIX ================= */
+
+.sales-section {
+  padding: 140px 20px;
+  background: linear-gradient(to bottom, #111111, #000000);
+  text-align: center;
+}
+
+/* Heading */
+.sales-section h2 {
+  color: #C9A24D;
+  font-size: 38px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+/* Paragraph */
+.sales-section p {
+  color: #B5B5B5;
+  max-width: 600px;
+  margin: 0 auto 50px;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+/* Buttons wrapper */
+.sales-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Gold Button */
+.sales-phone {
+  display: inline-block;
+  padding: 18px 42px;
+  border: 1.5px solid #C9A24D;
+  color: #C9A24D;
+  text-decoration: none;
+  font-size: 17px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+/* White Outline Button */
+.sales-phone.light {
+  border: 1.5px solid #FFFFFF;
+  color: #FFFFFF;
+}
+
+/* Hover Effects */
+.sales-phone:hover {
+  background: #C9A24D;
+  color: #000000;
+}
+
+.sales-phone.light:hover {
+  background: #FFFFFF;
+  color: #000000;
+}
+
+/* ==========================================
+   GLOBAL MOBILE FIX
+========================================== */
+
+@media (max-width: 992px) {
+
+  .content-section {
+    padding: 80px 6%;
+  }
+
+  .content-container {
+    max-width: 100%;
+  }
+
+}
+
+
+/* ==========================================
+   HERO SLIDER MOBILE
+========================================== */
+
+/* ==========================================
+   HERO SLIDER – RESPONSIVE FIX
+========================================== */
+
+@media (max-width: 768px) {
+
+  .hero-slider .slide img {
+    width: 100%;
+    height: auto;
+  }
+
+  .hero-text {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 30px;
+  }
+
+  .hero-title {
+    font-size: clamp(24px, 6vw, 32px);
+    letter-spacing: 1px;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+
+  .hero-location {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .nav-btn {
+    font-size: 18px;
+    padding: 8px 10px;
+  }
+
+}
+/* ==========================================
+   TREVI GRID STACK
+========================================== */
+
+@media (max-width: 992px) {
+
+  .trevi-layout {
+    grid-template-columns: 1fr ;
+    gap: 40px;
+  }
+
+  .trevi-image {
+    justify-content: center;
+  }
+
+  .trevi-image img {
+    max-width: 100%;
+  }
+
+  .trevi-actions {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+}
+
+
+/* ==========================================
+   LOCATION SECTION
+========================================== */
+
+@media (max-width: 992px) {
+
+  .trevi-location .trevi-layout {
+    grid-template-columns: 1fr ;
+  }
+
+  .location-distances {
+    gap: 14px;
+  }
+
+}
+
+
+/* ==========================================
+   FACILITIES GRID MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+  .facilities-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .facility-card {
+    padding: 26px 18px;
+  }
+
+}
+
+
+/* ==========================================
+   SALES SECTION MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+  .sales-section {
+    padding: 100px 6%;
+  }
+
+  .sales-section h2 {
+    font-size: 26px;
+  }
+
+  .sales-section p {
+    font-size: 14px;
+  }
+
+  .sales-buttons {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .sales-phone {
+    width: 100%;
+    text-align: center;
+  }
+
+}
+
+
+/* ==========================================
+   FOOTER MOBILE
+========================================== */
+
+@media (max-width: 992px) {
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .footer-social {
+    text-align: left;
+  }
+
+  .social-icons {
+    justify-content: flex-start;
+  }
+
+}/* ==========================================
+   HERO SLIDER — FULL IMAGE, NO CROP
+========================================== */
+
+.hero-slider {
+  background: #000;
+}
+
+.hero-slider .slide {
+  width: 100%;
+}
+
+.hero-slider .slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+/* ==========================================
+   HEADER – CLEAN MOBILE FIX
+========================================== */
+
+@media (max-width: 992px) {
+
+  .site-header {
+    height: 70px;
+    padding: 0 24px;
+  }
+
+  body {
+    padding-top: 70px;
+  }
+
+  .logo img {
+    height: 34px;
+  }
+
+  .nav {
+    right: 24px;
+    gap: 16px;
+  }
+
+  .nav a,
+  .nav-link {
+    font-size: 13px;
+  }
+
+}
+/* =========================================================
+   CLEANUP PATCH — NO DESIGN CHANGES
+   Only removes conflicts & stabilizes mobile
+========================================================= */
+
+/* 1️⃣ Prevent horizontal scroll */
+html, body {
+  overflow-x: hidden;
+}
+
+/* 2️⃣ Remove conflicting Trevi grid overrides on mobile */
+@media (max-width: 992px) {
+
+  /* Stack Trevi safely without touching desktop ratios */
+  .trevi-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  /* Remove duplicate !important overrides */
+  .trevi-location .trevi-layout {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* 3️⃣ Stabilize hero text on mobile */
+@media (max-width: 768px) {
+
+  .hero-text {
+    left: 20px;
+    right: 20px;
+    bottom: 30px;
+  }
+
+}
+
+/* 4️⃣ Normalize section padding only on mobile */
+@media (max-width: 768px) {
+
+  .content-section,
+  .facilities-section,
+  .sales-section {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+}
+html, body {
+  overflow-x: hidden;
+}
+/* ==========================================
+   TREVI SECTION – DESKTOP TIGHTEN FIX
+========================================== */
+
+@media (min-width: 1200px) {
+
+  /* Reduce overall width so it doesn't feel stretched */
+  .trevi-fullwidth .content-container {
+    max-width: 1300px;
+  }
+
+  /* Bring columns slightly closer */
+  .trevi-layout {
+    gap: 120px;
+  }
+
+  /* Reduce paragraph spacing for tighter layout */
+  .trevi-content p {
+    margin-bottom: 40px;
+  }
+
+  /* Reduce space above buttons */
+  .trevi-actions {
+    margin-top: 30px;
+  }
+
+  /* Slightly reduce image dominance */
+  .trevi-image img {
+    max-width: 820px;
+  }
+
+}
