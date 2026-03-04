@@ -328,6 +328,31 @@
 
   observer.observe(statement);
 </script>
+<script>
+
+function setupMobileDropdown() {
+
+  if (window.innerWidth > 992) return;
+
+  const dropdown = document.querySelector(".nav-dropdown");
+  const trigger = dropdown.querySelector(".nav-link");
+
+  trigger.addEventListener("click", function(e) {
+    e.preventDefault();
+    dropdown.classList.toggle("open");
+  });
+
+  document.addEventListener("click", function(e) {
+    if (!dropdown.contains(e.target)) {
+      dropdown.classList.remove("open");
+    }
+  });
+
+}
+
+window.addEventListener("load", setupMobileDropdown);
+
+</script>
 
 </body>
 </html>
